@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #f6f5f7;
+	background: #000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -72,7 +72,7 @@ button.ghost {
 
 form {
 	background-color: #ffffff;
-	background: linear-gradient(to right, #a965e9, #24272B);
+	background: linear-gradient(to right, #cf0a0a, #24272B);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -165,7 +165,7 @@ input {
 
 .overlay {
 	background: #6565e9;
-	background: linear-gradient(to right, #6565e9, #24272B);
+	background: linear-gradient(to right, #cf0505, #24272B);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
