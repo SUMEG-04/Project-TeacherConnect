@@ -1,0 +1,6 @@
+<ul>
+	{% for user in users%}
+	<li>{{user.id}}{{user}}{{user.email}}</li>
+	{% endfor %}
+</ul>
+<a href="{% url 'show_teachers'%}">show</a>

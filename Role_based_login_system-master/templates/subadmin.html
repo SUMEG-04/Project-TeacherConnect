@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>subadmin page</title>
+</head>
+<body>
+    <h1> hello {{ user.username }} your role is subadmin</h1>
+    <button type="button">
+        <a href="{% url 'search' %}">search</a>
+    </button>
+    <form action = "{% url 'takeinput'%}" method = "post">
+        {% csrf_token %}
+        <label>Employee ID :</label>
+        <input type='number' name="EmpID" id="emp_id" placeholder="Enter ID">
+        <br>
+        <label>Username :</label>
+        <input type='text' name="username" id="user_name" placeholder="Enter username">
+        <br>
+        <label>Email :</label>
+        <input type='email' name="email" id="mail_id" placeholder="Enter email">
+        <br>
+        <label>College :</label>
+        <input type='text' name="college" id="college_name" placeholder="Enter college">
+        <br>
+        <label>Subject :</label>
+        <input type='text' name="subject" id="subject_name" placeholder="speciallity">
+        <br>
+        <label>Designation :</label>
+        <input type='text' name="designation" id="designation" placeholder="Enter designation">
+        <br>
+        <!-- <label>phD :</label>
+        <input type='checkbox' name="isphd" id="is_phd" >
+        <br> -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
