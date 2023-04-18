@@ -72,7 +72,7 @@ button.ghost {
 
 form {
 	background-color: #ffffff;
-	background: linear-gradient(to right, #cf0a0a, #24272B);
+	background: linear-gradient(to right, #cf0a0a, #2b2424);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -95,7 +95,7 @@ input {
 }
 
 .container {
-	background-color: #fff;
+	background-color: #000;
 	
 	box-shadow: 0 14px 28px rgba(0,0,0,0.22), 0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
@@ -165,7 +165,7 @@ input {
 
 .overlay {
 	background: #6565e9;
-	background: linear-gradient(to right, #cf0505, #24272B);
+	background: linear-gradient(to right, #e00505, #630505);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
