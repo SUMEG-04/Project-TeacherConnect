@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox_practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        html{
+            font-size: 62.5%;
+        }
+        body {
+            background: #000;
+	       justify-content: center;
+	       align-items: center;
+           font-family: 'Montserrat', sans-serif;
+	       height: 100vh;
+           margin: 0;
+	       padding: 0;
+        }
+        p{
+            margin: 0px;
+        }
+        .flex-container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: 100%;
+            width: 100%;
+        }
+        .part1,.part2{
+            width: 50%;
+
+        }
+        
+        a,a:hover{
+            text-decoration: none;
+        }
+        .searchBox{
+            
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .searchText{
+            width: 0rem;
+            background-color: #000;
+            border-radius: 5rem;
+            border: none;
+            outline: none;
+            transition: all 0.2s linear;
+        }
+        .searchText:focus{
+            outline:none;
+        }
+        .searchBtn{
+            width:5rem;
+            height:5rem;
+            background-color: #192a56;
+            color:#fff;
+            position: relative;
+            right: 6rem;
+            border-radius: 3rem;
+            display: grid;
+            place-items: center;
+        }
+        .searchBox:hover > .searchText{
+            width: 25rem;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 2rem 2rem -1.5rem rgba(0,0,0,0.5);
+        }
+        .searchBox:hover > .searchBtn{
+            background-color: #fff;
+            color: #1b1414;
+        }
+        .flex_box1{
+            background-color: #fff;
+            background: linear-gradient(to right,#000,#1b1414 );
+            height: 10%;
+            font-size:xx-large;
+            color: white;
+            margin: 2px 0px;
+            border-radius: 6px 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content:right;
+            align-items:center;
+        }
+        .flex_box2{
+            background-color: #fff;
+            background: linear-gradient(to right,#720404,#220101 );
+            width: 100%;
+            height:100%;
+            font-size:xx-large;
+            color: white;
+            margin: 0px;
+
+
+        }
+        .flex,.flex1,.flex2{
+            display: flex;
+            flex-direction: row;
+            height:100%;
+
+        }
+        .item1{
+            background-color: white;
+            
+            color:  #fff;
+            width: 20%;
+            height: 100%;
+            border-radius: 4px;
+            font-size: x-large;
+            line-height: 1.5; 
+        }
+        .item2{
+            background-color: white;
+            background: linear-gradient(to right,#b10a0a,#490202 );
+            color:  #fff;
+            width: 80%;
+            height: 100%;
+            border-radius: 4px;
+            font-size: x-large;
+            line-height: 1.5; 
+        }
+        .section{
+            background-color: #020202;
+            color: #fff;
+            width: 100%;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            height:98.4%;
+            margin: 0px;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .Btn{
+            width:20rem;
+            height:4rem;
+            margin: 8px;
+            border-radius: 5rem;
+            border: none;
+            background-color: #e41a1a;
+            font-size: x-large;
+            color: #f3eaea;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .list{
+            background-color: #020202;
+            margin: 4px;
+            padding: 2rem;
+            border-radius: 1rem;
+            height: 40rem;
+            overflow: auto;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        
+        <div class="flex_box1" id="flex_item_1">
+           <div class="part1"><p >Teacher's Panel</p></div>
+           <div class="part2">
+            <div class="searchBox">
+                <input type="text" name="teach" id="teach" class="searchText" placeholder="Type to search..">
+                <a href="#" class="searchBtn">
+                    <i class="fas fa-search fa-1x"></i>
+                </a>
+            </div>
+           </div>
+        </div>
+        <div class="flex_box2" id="flex_item_1">
+            <div class="flex">
+                <div class="item1">
+                    <div class="section">
+                        <button class="Btn">
+                            Chat
+                        </button>
+                        <button class="Btn">
+                            Post
+                        </button>
+                        <button class="Btn"></button>
+                        <button class="Btn"></button>
+                    </div>
+                    
+                </div>
+                <div class="item2">
+                    <div class="info">
+                        <h2>Welcome Kaif!</h2>
+                        <p></p>
+                    </div>
+                    <div class="list">
+                        <div class="teach-list">
+                            <li>Loading...</li>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   <script>
+    const users=document.querySelector('.teach-list');
+    const username=document.querySelector("#teach");
+    
+    const userArray=[];
+
+    const getUserData=async()=>{
+        try{
+
+            const res=await fetch();
+            const data=awiat res.json();
+            console.log(data);
+
+            if(data){
+                users.innerHTML=""
+            }
+
+            data.map((teach)=>{
+                const li=documnet.createElement('li');
+
+                userArray.push(li);
+
+                li.insertAdjacentHtml('afterbegin',
+                `
+                <div class="teach-data hide">
+                    // add the data of teacher here
+                        <p>${}</p> 
+                </div>
+                `
+                )
+                users.appendChild(li);
+            })
+        }catch(error){
+            console.log(error);
+        }
+    }
+    username.addEventListener('input',(e)=>{
+        const val=e.target.value;
+        console.log(val);
+        userArray.filter((currelem)=>{
+            currelem.innerText.tolowerCase().includes(val.tolowerCase()) ?
+            currelem.classList.remove('hide'):
+            currelem.classList.add('hide')
+        })
+    })
+
+    getUserData();
+
+   </script>
+</body>
+</html>
