@@ -28,7 +28,9 @@ Security: The software will be secure and ensure the confidentiality of user dat
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/1gfwMeFe0j1HxIlCgdm9Yj8eBFYgVb4t8/view)
+![home_page](https://user-images.githubusercontent.com/79495013/236434327-7b7f1363-8ccb-4da1-9d0c-b1583f211bf2.jpg)
+
+![login_page](https://user-images.githubusercontent.com/79495013/236434351-7390bbde-ed43-4daa-b00f-42cb4d839b8b.jpg)
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
