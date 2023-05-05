@@ -1,15 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>admin page</title>
-</head>
-<body>
-    <h1> hello {{ user.username }} your role is admin</h1>
-    <button type="button">
-        <a href="{% url 'search' %}">search</a>
-    </button>
-    
-    
-</body>
+    <style>
+      *{
+        transition: all 500ms ease-in-out;
+      }
+      .box-flex{
+        display: flex;
+        padding: 20px;
+        flex-direction: row;
+      }
+      .box-style {
+        width: 150px;
+        height: 150px;
+        padding: 23px;
+        border: solid black 7px;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        background-color: burlywood;
+      }
+
+      .box-style:hover{
+        transform: rotate(360deg);
+        transform: scale(1.1);
+        margin: 25px;
+        transition: all 500ms;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>hello {{ user.username }} your role is admin</h1>
+        <button type="button">
+          <a href="{% url 'search' %}">search</a>
+        </button>
+      </div>
+      <div class="box-flex">
+        <div class="box-style" onclick="setCollegeVisiblity()">Colleges</div>
+        <div class="box-style" onclick="setDepartmentVisiblity()">
+          Departments
+        </div>
+        <div class="box-style" onclick="setTeacherVisiblity()">Teachers</div>
+      </div>
+      <div>
+        <h1>Hi</h1>
+        <div class="college-container" id="colleges" style="display: none">
+          <h1>Colleges</h1>
+          <ul>
+            {% for clgs in all_colleges %}
+            <li><p>{{clgs.college}}</p></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="dept-container" id="depts" style="display: none">
+          <h1>Departments</h1>
+          <ul>
+            {% for dpt in all_dpts %}
+            <li><p>{{dpt.subject}}</p></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="teacher-container" id="teachers" style="display: none">
+          <h1>Teachers</h1>
+          <ul>
+            {% for tchr in all_teacher %}
+            <li><p>{{tchr.username}}</p></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function setTeacherVisiblity() {
+        teacher = document.getElementById("teachers");
+        if (teacher.style.display === "none") {
+          teacher.style.display = "block";
+        } else {
+          teacher.style.display = "none";
+        }
+      }
+
+      function setDepartmentVisiblity() {
+        dept = document.getElementById("depts");
+        if (dept.style.display === "none") {
+          dept.style.display = "block";
+        } else {
+          dept.style.display = "none";
+        }
+      }
+
+      function setCollegeVisiblity() {
+        college = document.getElementById("colleges");
+        if (college.style.display === "none") {
+          college.style.display = "block";
+        } else {
+          college.style.display = "none";
+        }
+      }
+    </script>
+  </body>
 </html>

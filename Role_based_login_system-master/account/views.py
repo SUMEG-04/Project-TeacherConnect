@@ -52,7 +52,11 @@ def login_view(request):
 
 
 def admin(request):
-    return render(request,'admin.html')
+    teacher_db = Database.objects.all()
+    colleges_db = teacher_db.order_by().values('college').distinct()
+    dept_db = teacher_db.order_by().values('subject').distinct()
+    # print(teacher_db)
+    return render(request,'admin.html', {'all_teacher': teacher_db, 'all_colleges': colleges_db, 'all_dpts': dept_db})
 
 
 def subadmin(request):
