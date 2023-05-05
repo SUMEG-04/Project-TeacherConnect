@@ -25,6 +25,11 @@ Security: The software will be secure and ensure the confidentiality of user dat
     • Information and notification dissemination: The software will allow the admin user to circulate various information and notifications to the users.
     • Research paper publishing: The software will provide a facility for users to publish joint venture research papers with other teachers on the platform.
     • User feedback: The software will allow users to provide feedback on the platform's features and functionalities to improve the user experience.
+
+## Screenshots
+
+![App Screenshot](https://drive.google.com/file/d/1gfwMeFe0j1HxIlCgdm9Yj8eBFYgVb4t8/view)
+
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
