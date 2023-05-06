@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            background: linear-gradient(to bottom right,#fc2828,#000147);
+        }
+        .cards{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            width: 80%;
+            margin: 30px;
+            background-color: white;
+            border-radius: 12px;
+            text-align: center;
+            padding: 15px 20px;
+            box-shadow: 1rem 2rem 2rem rgba(0, 0, 0, 0.4);
+        }
+        .card:hover{
+            transform: scale(1.05);
+            transition: all 0.2s ease-in-out;
+        }
+        img{
+            width: 80%;
+            height: 250px;
+            border-radius: 300px;
+        }
+        .links{
+            text-align: left;
+            position: relative;
+            margin: 4px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            
+        }
+        a:hover{
+            color:red;
+            transform: scale(1.05);
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .info{
+            color: wheat;
+            font-size: larger;
+            font-family: "Raleway",sans-serif;
+            font-weight: bold;
+            margin: 20px 20px 0px 20px ;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+
+        }
+        .footer{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="cards">
+                <div class="card">
+                    <img src="../static/images/sumeg.jpg" alt="" >
+                    <div class="card_info">
+                        <h2>Sumeg Sharnagat</h2>
+                        <h3>FrontEnd Developer</h3>
+                        <hr>
+                        <div class="links">
+                            <i class="fa-solid fa-link fa-lg"></i>
+                            <a href="http://"><h2>Linked<i class="fa-brands fa-linkedin fa-sm"></i></h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/images/prerna.jpg" alt="" >
+                    <div class="card_info">
+                        <h2>Prerna Jha</h2>
+                        <h3>BackEnd Developer</h3>
+                        <hr>
+                        <div class="links">
+                            <i class="fa-solid fa-link fa-lg"></i>
+                            <a href="http://"><h2>Linked<i class="fa-brands fa-linkedin fa-sm"></i></h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="" alt="" >
+                    <div class="card_info">
+                        <h2>MD Kaif</h2>
+                        <h3>BackEnd Developer</h3>
+                        <hr>
+                        <div class="links">
+                            <i class="fa-solid fa-link fa-lg"></i>
+                            <a href="http://"><h2>Linked<i class="fa-brands fa-linkedin fa-sm"></i></h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/Role_based_login_system-master/static/images/Sohel.jpeg" alt="" >
+                    <div class="card_info">
+                        <h2>MD Sohel</h2>
+                        <h3>FullStack Developer</h3>
+                        <hr>
+                        <div class="links">
+                            <i class="fa-solid fa-link fa-lg"></i>
+                            <a href="http://"><h2>Linked<i class="fa-brands fa-linkedin fa-sm"></i></h2></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <p><h1>About Us</h1>
+                    <br>
+                    We are a team of four developers who came together to create a software solution for teachers to collaborate and connect with each other. 
+                    <br>
+                    <br>
+                    Here are our profiles:
+                    <br>
+                    <br>
+                    <h3>Sumeg- Front End Developer</h3> 
+                    Sumeg is a skilled front end developer with expertise in HTML, CSS, and JavaScript. He is passionate about creating beautiful and intuitive user interfaces that enhance the user experience.
+                    <br>
+                    <br>
+                    <h3>Prerna - Back End Developer</h3>
+                    Prerna is a talented back end developer with experience in PHP, MySQL, and Node.js. She is responsible for designing and implementing the software's database structure and server-side functionality.
+                    <br>
+                    <br>
+                    <h3>Sohel - Full Stack Developer</h3>
+                    Sohel is a versatile full stack developer with expertise in both front end and back end technologies. He has experience with React, Angular, PHP, Node.js, and MongoDB, and he played a key role in integrating the software's various components.
+                    <br>
+                    <br>
+                    <h3>Kaif - Front End Developer</h3>
+                    Kaif is a creative front end developer with experience in designing and developing user interfaces for web applications. He has expertise in React, Angular, and Vue.js, and he is responsible for designing and implementing the software's user interface.
+                    <br>
+                    <br>
+                    Together, we worked collaboratively to create a software solution that meets the needs of teachers who want to connect and collaborate with each other. We are proud of what we have created and look forward to seeing how it helps the teacher community.</p>
+            </div>
+            <div class="footer">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
