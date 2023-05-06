@@ -2,108 +2,104 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>admin page</title>
-    <style>
-      *{
-        transition: all 500ms ease-in-out;
-      }
-      .box-flex{
-        display: flex;
-        padding: 20px;
-        flex-direction: row;
-      }
-      .box-style {
-        width: 150px;
-        height: 150px;
-        padding: 23px;
-        border: solid black 7px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        text-align: justify;
-        background-color: burlywood;
-      }
-
-      .box-style:hover{
-        transform: rotate(360deg);
-        transform: scale(1.1);
-        margin: 25px;
-        transition: all 500ms;
-      }
-
-    </style>
+    <title>Admin page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin.css'%}" />
+    <script src="{% static 'js/admin.js' %}"></script>
   </head>
+
   <body>
     <div class="container">
-      <div>
-        <h1>hello {{ user.username }} your role is admin</h1>
-        <button type="button">
-          <a href="{% url 'search' %}">search</a>
-        </button>
+      <div class="sidebar">
+        <h1 class="sidebar-title">Teacher Connect</h1>
+        <ul class="sidebar-list">
+          <li><div class="sidebar-item">Colleges</div></li>
+          <li><div class="sidebar-item">Department</div></li>
+          <li><div class="sidebar-item">Teachers</div></li>
+          <li><div class="sidebar-item" id="log-out-btn">Log out</div></li>
+        </ul>
       </div>
-      <div class="box-flex">
-        <div class="box-style" onclick="setCollegeVisiblity()">Colleges</div>
-        <div class="box-style" onclick="setDepartmentVisiblity()">
-          Departments
+
+      <main class="main-box">
+        <div class="main-top-box">
+          <h1 class="role-box">Hello {{ user.username }} your role is Admin</h1>
+          <!-- <button type="button">
+            <a href="{% url 'search' %}">search</a>
+          </button> -->
         </div>
-        <div class="box-style" onclick="setTeacherVisiblity()">Teachers</div>
-      </div>
-      <div>
-        <h1>Hi</h1>
-        <div class="college-container" id="colleges" style="display: none">
-          <h1>Colleges</h1>
-          <ul>
+        <div class="box-flex">
+          <!-- <button class="box-style" id="college-box" onclick="setCollegeVisiblity()"> -->
+          <button
+            class="box-style"
+            id="college-box"
+            onclick="setCollegeVisiblity()"
+          >
+            <span class="front-btn">
+              <h3 class="box-element">Colleges</h3>
+              <p class="box-element">Total: {{all_teacher.count}}</p>
+            </span>
+          </button>
+          <div
+            class="box-style"
+            id="department-box"
+            onclick="setDepartmentVisiblity()"
+          >
+            <span class="front-btn">
+              <h3 class="box-element">Departments</h3>
+              <p class="box-element">Total: {{all_teacher.count}}</p>
+            </span>
+          </div>
+          <div
+            class="box-style"
+            id="teacher-box"
+            onclick="setTeacherVisiblity()"
+          >
+            <span class="front-btn">
+              <h3 class="box-element">Teachers</h3>
+              <p class="box-element">Total: {{all_teacher.count}}</p>
+            </span>
+          </div>
+        </div>
+
+        <div class="data-container" style="position: absolute">
+          <div class="college-container" id="colleges" style="display: none">
+            <h1 class="college-head">Colleges</h1>
+            <ul>
+              {% for clgs in all_colleges %}
+              <li><p>{{clgs.college}}</p></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <!-- <table class="college-container" id="colleges" style="display: none">
+            <tr class="college-head">
+              <th>Colleges</th>
+            </tr>
             {% for clgs in all_colleges %}
-            <li><p>{{clgs.college}}</p></li>
+            <tr>
+              <th><p>{{clgs.college}}</p></th>
+            </tr>
             {% endfor %}
-          </ul>
+          </table> -->
+
+          <div class="dept-container" id="depts" style="display: none">
+            <h1 class="college-head">Departments</h1>
+            <ul>
+              {% for dpt in all_dpts %}
+              <li><p>{{dpt.subject}}</p></li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="teacher-container" id="teachers" style="display: none">
+            <h1 class="college-head">Teachers</h1>
+            <ul>
+              {% for tchr in all_teacher %}
+              <li><p>{{tchr.username}}</p></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-        <div class="dept-container" id="depts" style="display: none">
-          <h1>Departments</h1>
-          <ul>
-            {% for dpt in all_dpts %}
-            <li><p>{{dpt.subject}}</p></li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="teacher-container" id="teachers" style="display: none">
-          <h1>Teachers</h1>
-          <ul>
-            {% for tchr in all_teacher %}
-            <li><p>{{tchr.username}}</p></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
+      </main>
     </div>
-
-    <script>
-      function setTeacherVisiblity() {
-        teacher = document.getElementById("teachers");
-        if (teacher.style.display === "none") {
-          teacher.style.display = "block";
-        } else {
-          teacher.style.display = "none";
-        }
-      }
-
-      function setDepartmentVisiblity() {
-        dept = document.getElementById("depts");
-        if (dept.style.display === "none") {
-          dept.style.display = "block";
-        } else {
-          dept.style.display = "none";
-        }
-      }
-
-      function setCollegeVisiblity() {
-        college = document.getElementById("colleges");
-        if (college.style.display === "none") {
-          college.style.display = "block";
-        } else {
-          college.style.display = "none";
-        }
-      }
-    </script>
   </body>
 </html>

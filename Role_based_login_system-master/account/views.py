@@ -53,6 +53,7 @@ def login_view(request):
 
 def admin(request):
     teacher_db = Database.objects.all()
+    print(teacher_db)
     colleges_db = teacher_db.order_by().values('college').distinct()
     dept_db = teacher_db.order_by().values('subject').distinct()
     # print(teacher_db)
